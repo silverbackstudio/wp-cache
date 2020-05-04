@@ -1,0 +1,30 @@
+{
+    "name": "silverback/wp-cache",
+    "description": "PSR-16 compliant caching interface for WP",
+    "type": "library",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Brando Meniconi",
+            "email": "b.meniconi@silverbackstudio.it"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Svbk\\WP\\Cache\\": "src/"}
+    },     
+    "require-dev": {
+        "phpunit/phpunit": "^8",
+        "wp-coding-standards/wpcs": "^0.13.1",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.2",
+        "wimg/php-compatibility": "^8.0"        
+    },
+    "scripts": {
+        "test": [
+          "vendor/bin/phpcs src",
+          "vendor/bin/phpunit --bootstrap ../../../wp/wp-load.php --color tests"
+        ],        
+        "beautify": [
+          "vendor/bin/phpcbf src"
+        ]        
+    }     
+}
